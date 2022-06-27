@@ -22,6 +22,8 @@
   - [Opening a Merge Request](#opening-a-merge-request)
 - [Other Common Scenarios](#other-common-scenarios)
   - [Forks](#forks)
+  - [Reverts and Resets](#reverts-and-resets)
+  - [Rebases](#rebases)
   - [Merge Conflicts](#merge-conflicts)
   - [Finding Help](#finding-help)
 - [Tools Demo](#tools-demo)
@@ -30,6 +32,7 @@
 - [Github Console Features](#github-console-features)
   - [Issues](#issues)
   - [Branch Summary](#branch-summary)
+  - [Versioning](#versioning)
   - [Discussions](#discussions)
   - [Projects](#projects)
   - [Wiki](#wiki)
@@ -37,7 +40,7 @@
 ---
 
 ## Prequisites
-- Create/Have a github account (link here but not sure if github or secureserver)
+- [Create a github account](https://github.com) (if not already present)
 - [Install git](https://git-scm.com/downloads)
 
 
@@ -51,7 +54,18 @@
 Git is a version control tool that helps keep track of written code history and management as well as
 coordinate work between multiple people writing into the same code base
 
-(Insert Image/Diagram of common workflow here)
+<br/>
+
+Quick Terminology (will go into further depth later):
+- Branch: Independent copy of the repository/project. Changes do not affect other active copies.
+- Commit: A summary of saved changes within the project, packaged as a single instance
+- Pull Request: An operation to submit changes from the copy back into the main
+
+Simple Sample Flow:
+<br/>
+
+![Simple Worflow](https://i0.wp.com/build5nines.com/wp-content/uploads/2018/01/GitHub-Flow.png)
+*note: master branches are now referred to as main branches
 
 ---
 
@@ -182,6 +196,20 @@ In this case, `git add <file>`
 **Diagrams/Images**
  
 ---
+## Reverts and Resets
+ 
+**Explanation**
+ 
+**Diagrams/Images**
+ 
+---
+## Rebases
+ 
+**Explanation**
+ 
+**Diagrams/Images**
+ 
+---
  
 ## Merge Conflicts
  
@@ -194,7 +222,7 @@ In this case, `git add <file>`
 ## Finding Help
  
 **Explanation**
-(cherry pick, rebase, reset)
+
 **Diagrams/Images**
  
 ---
@@ -220,6 +248,14 @@ In this case, `git add <file>`
 ---
  
 ## Branch Summary
+ 
+**Explanation**
+ 
+**Diagrams/Images**
+
+---
+
+## Versioning
  
 **Explanation**
  
