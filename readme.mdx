@@ -214,10 +214,27 @@ git commit -m "<commit message>"
  
 ## Opening a Merge Request
  
-**Explanation**
-(includes commenting and approving/denying, squashing)
- 
-**Diagrams/Images**
+A merge request (MR) is an official "form" that says "hey, I want to put this code, into that branch" where you specify the "target branch" you want to inherit your branch's code. 
+Usually it's the new feature into the main branch. Sometimes referred to as a pull request (PR), an MR/PR allows others to easily view the summarized
+changes (all files' deletes and adds) as well as comment on them and approve/deny the PR.
+
+When you push a new branch for the first time to remote, git may even suggest you open a PR for it, as you'll a message along the lines of:
+```
+remote: Create a pull request for 'sammy/lab-pushing' on GitHub by visiting:
+remote:      https://github.com/asingh1-godaddy/github-bootcamp/pull/new/sammy/lab-pushing
+```
+and you just click on the link
+
+<br/>
+
+If Github determines your code is good (passes certain automated steps that may be there on setup), it will let you merge your branch into a target branch.
+It is then good practice to delete your branch after it is merged. Or if your changes are no longer needed you may simply close the PR as well.
+
+Note: 
+- You may also get rid of your branch locally by running `git branch -d <branch name>`
+- You can list all the branches you have downloaded locally by running `git branch`, to ensure your branch is actually deleted
+- Squashing and merging (click on arrow next to Merge button on a PR) will allow you to consolidate all your changes into a single commit rather than X number of commits
+- Try to notice a few things about what you see, namely the tabs and branch commit history
 
 ---
  
