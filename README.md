@@ -183,7 +183,7 @@ In this case, `git add <file>`
 ## Opening a Merge Request
  
 **Explanation**
-(includes commenting and approving/denying)
+(includes commenting and approving/denying, squashing)
  
 **Diagrams/Images**
 
