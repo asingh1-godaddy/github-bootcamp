@@ -13,8 +13,7 @@
 - [Walkthrough Lab](#walkthrough-lab)
   - [Cloning](#cloning)
   - [Branching](#branching)
-    - [Checking Out Your Own Branch](#checking-out-your-own-branch)
-    - [Checking out Other Branches](#checking-out-other-branches)
+    - [Checking Out Branches](#checking-out-branches)
     - [Remote vs Local Branch](#remote-vs-local-branch)
   - [Saving and Committing Changes](#saving-and-committing-changes)
   - [Pushing up your changes](#pushing-up-your-changes)
@@ -155,34 +154,71 @@ Note:
  
 ## Branching
  
-**Explanation**
- 
-**Diagrams/Images**
+ A branch is an independent copy of the repository. Changing one branch will not change another. Branches typically follow a hierarchy where the main branch rarely changes and has the most stable and working version. There may also be developer, test, and feature branches with their own unique changes that adopt each other in at some point. 
+
+ Branches can be based off of any other branch, or any other commit. When put that way, a branch is really nothing but the latest commit in a culmination of isolated commits (isolated as in saved in not actively affecting other branches, unless those branches choose to take them in manually).
+
+<br/>
+
+A little more complex diagram:
+
+<br/>
+
+![](https://user-images.githubusercontent.com/18033666/40845164-dbb9a75e-6583-11e8-8a17-8bc2b03d0350.png)
+
+People typically only work on mostly one, if not sometimes a few unrelated branches, at a time. Even then they don't become complex webs of related commits. Just keep on coding and you'll see it's easier to conceptualize than a lot of graphs portray
  
 ---
  
-### Checking Out Your Own Branch
+### Checking Out Branches
  
-**Explanation**
+When you want to make or "checkout" a new branch, you can do so via the terminal or github. Think of "checking out" the same way you would a library book, except there's unlimited copies.
+
+Via terminal:
+- To make a new branch: `git checkout -b <new branch name>`
+- To view other branches:
+  - When you initially clone a repo you generally only have what branches already existed at time of cloning and any new branches you've made
+  - If someone makes a new branch you'd like to see, after you've cloned it, you will need to
+    - To download the latest respository "state": `git fetch` (will explain more next slide)
+    - To actually switch to a branch after update: `git checkout <branch name>`
+  - Else you can switch to the branches you already know you have
+    - If a branch you checked out is "out of date" (someone made )
+
+Via Github:
+
+- On the top right of the repo page, you'll see the branch icon with the name of the current branch you are viewing. From here, you can view (aka check out) other people's branches or create a new branch by typing the a name in the search bar (provided that branch name doesn't already exist)
+
+![](images/github_branching.png)
  
-**Diagrams/Images**
+
+ Note:
+- The naming of a branch typically has conventions dictated by your team or project. Examples include
+  - `name/title` e.g. `robert/login-page`
+  - `scope/title`  e.g. `bugfix/incorrect_sum`
+  - `title` e.g. `center_login_div`
+
+**Lab Objectve**
  
----
- 
-### Checking out Other Branches
- 
-**Explanation**
- 
-**Diagrams/Images**
+- Checkout an existing branch `sammy/aboutme` and notice the new file under `/labfiles/sammy.md`
+- Checkout the main branch again (titled master)
+- Checkout a new branch with convention `<your name>/aboutme`
+
+<br/>
 
 ---
 
-### Remote vs Local Branch
+## Remote vs Local Branch
  
-**Explanation**
- 
-**Diagrams/Images**
- 
+A remote branch is the saved branch data as known by your online Github account.
+
+A local branch is the saved branch data as known by your hard drive.
+
+<br/>
+
+If I make changes to my aboutme file in my editor, those changes only exist on my computer. If you try to fetch and pull my changes, you won't see the changes I've saved since I haven't modified my remote branch. AKA github.com doesn't know I've made those changes because I haven't "told" github about it yet; I haven't "pushed up" those changes. Therefore it can't communicate to you the changes I made and you cannot view them. The same goes for everyone else's branches. Whatever you `File > Save` or `Cmd + S` will not immediately be known by github.
+
+<br/>
+
 ---
  
 ## Saving and Committing Changes
