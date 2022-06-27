@@ -126,9 +126,9 @@ In this case, `git add <file>`
 **Explanation**
 
 Cloning a repository refers to downloading a copy of the main branch onto your hard drive.
-Changes you make to that code won't reflect the online copy until those changes are "committed" and "pushed"
+Changes you make to that code won't reflect the online copy until those changes are "committed" and "pushed".
 
-A few ways to clone a repo:
+The git file or file source link is needed to clone it. Github itself offers a multitude of ways to clone a repo, which you can find with the green `Code` button at the top right of the github repo page:
 
 <br/>
 
