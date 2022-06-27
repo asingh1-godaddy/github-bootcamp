@@ -61,11 +61,14 @@ Quick Terminology (will go into further depth later):
 - Commit: A summary of saved changes within the project, packaged as a single instance
 - Pull Request: An operation to submit changes from the copy back into the main
 
-Simple Sample Flow:
+Simple Flow:
+
 <br/>
 
 ![Simple Worflow](https://i0.wp.com/build5nines.com/wp-content/uploads/2018/01/GitHub-Flow.png)
 *note: master branches are now referred to as main branches
+
+<br/>
 
 ---
 
