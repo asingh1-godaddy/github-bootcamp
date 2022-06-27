@@ -17,7 +17,6 @@
     - [Checking out Other Branches](#checking-out-other-branches)
     - [Remote vs Local Branch](#remote-vs-local-branch)
   - [Saving and Committing Changes](#saving-and-committing-changes)
-  - [- Github trivializes the two above this with its interface but it's good to know](#--github-trivializes-the-two-above-this-with-its-interface-but-its-good-to-know)
   - [Pushing up your changes](#pushing-up-your-changes)
       - [Local vs Remote Branch](#local-vs-remote-branch)
   - [Opening a Merge Request](#opening-a-merge-request)
@@ -226,6 +225,7 @@ Note:
 - Commands such as `git log` can show you the commit history directly within the terminal
 - Commands such as `git diff` can show you in the terminal the changes you made to your code
 - Github trivializes the two above this with its interface but it's good to know
+
 ---
  
 ## Pushing up your changes
