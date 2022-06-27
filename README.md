@@ -122,11 +122,35 @@ In this case, `git add <file>`
 # Walkthrough Lab
  
 ## Cloning
- 
+
 **Explanation**
+
+Cloning a repository refers to downloading a copy of the main branch onto your hard drive.
+Changes you make to that code won't reflect the online copy until those changes are "committed" and "pushed"
+
+A few ways to clone a repo:
+
+<br/>
+
+![](images/github_clone.png)
+
+- HTTPS
+- SSH
+- GitHub CLI
+- GitHub Desktop
+- Download ZIP
+
+**Objectve**
  
-**Diagrams/Images**
- 
+- Get a local workable copy of the repo
+
+Command: `git clone <link to .git file>`
+
+Note: 
+* Preferably you should organize your projects and clone into some sort of documents/tutorials directory
+* Not everyfile will be dumped into where you run the command, but the contents of the copy will be put into another folder with the project name as its title
+  * i.e. cloning this repo into `~/Documents` won't create `~/Documents/README.md`, `~/Documents/<all your files>`, etc but rather `Documents/github-bootcamp/<all your files>`
+
 ---
  
 ## Branching
