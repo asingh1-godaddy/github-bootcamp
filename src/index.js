@@ -16,7 +16,7 @@ import {
 
 
 // SPECTACLE_CLI_MDX_START
-import slides, { notes } from './slides.mdx';
+import slides, { notes } from '../readme.mdx';
 // SPECTACLE_CLI_MDX_END
 
 
