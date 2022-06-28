@@ -321,100 +321,177 @@ Note:
 ---
  
 # Other Common Scenarios
+---
+## Status
+The git status command displays the state of the working directory and the staging area. It lets you see which changes have been staged, which haven't, and which files aren't being tracked by Git.
 
+---
  
 ## Forks
- 
 **Explanation**
- 
+A fork creates a completely independent copy of Git repository.
+Forks are a great way of creating independent copies and contributing to open-source, without necessary having access to the "main" repository.
+Forks are commonly used for open-source contribution and having safe copies for libraries. Forks by default would have two remotes setup. 
+The origin repository is saved as upstream and the forked repository is saved as origin. Both are retained so that the developers can interact with both repositories according to their scenario and choice.
+
+---
 **Diagrams/Images**
- 
+[Live demo](https://github.com/facebook/react)
 ---
 ## Reverts and Resets
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+Ways of undoing changes made in a commit
 ---
-## Rebases
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+### Revert
+By reverting a certain commit, we create a new commit that contains the reverted changes!
+
+![](./images/reverting.gif)
+
 ---
+### Reset
+It can happen that we committed changes that we didn't want later on. Maybe it's a WIP commit, or maybe a commit that introduced bugs! 🐛 In that case, we can perform a git reset.
+
+A git reset gets rid of all the current staged files and gives us control over where HEAD should point to.
+
+---
+
+### Soft Reset
+**Explanation**
+A soft reset moves `HEAD` to the specified commit (or the index of the commit compared to `HEAD`), without getting rid of the changes that were introduced on the commits afterward!
  
+![](./images/soft-reset.gif)
+
+---
+
+### Hard Reset
+Sometimes, we don't want to keep the changes that were introduced by certain commits. Unlike a soft reset, we shouldn't need to have access to them any more. Git should simply reset its state back to where it was on the specified commit: this even includes the changes in your working directory and staged files! 💣
+ 
+![](./images/hard-reset.gif)
+
+---
+
 ## Merge Conflicts
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+Having multiple branches is extremely convenient to keep new changes separated from each other, and to make sure you don't accidentally push unapproved or broken changes to production. Once the changes have been approved, we want to get these changes in our production branch!
+
+One way to get the changes from one branch to another is by performing a git merge!
+--- 
+![](./images/merge-conflict-setup.png)
+
+Although Git is good at deciding how to merge branches and add changes to files, it cannot always make this decision all by itself 🙂 This can happen when the two branches we're trying to merge have changes on the same line in the same file, or if one branch deleted a file that another branch modified, and so on.
+---
+If we want to merge dev into master, this will end up in a merge conflict: would you like the title to be Hello! or Hey!?
+When trying to merge the branches, Git will show you where the conflict happens. We can manually remove the changes we don't want to keep, save the changes, add the changed file again, and commit the changes 🥳
+
+Yay! Although merge conflicts are often quite annoying, it makes total sense: Git shouldn't just assume which change we want to keep.
+
+![](./images/merge-conflict.gif)
+
+---
+
+## Rebases
+We just saw how we could apply changes from one branch to another by performing a git merge. Another way of adding changes from one branch to another is by performing a git rebase.
+
+A git rebase copies the commits from the current branch, and puts these copied commits on top of the specified branch.
+A big difference compared to merging, is that Git won't try to find out which files to keep and not keep. The branch that we're rebasing always has the latest changes that we want to keep! You won't run into any merging conflicts this way, and keeps a nice linear Git history.
+
+This example shows rebasing on the master branch. In bigger projects, however, you usually don't want to do that. A git rebase changes the history of the project as new hashes are created for the copied commits!
+
+Rebasing is great whenever you're working on a feature branch, and the master branch has been updated. You can get all the updates on your branch, which would prevent future merging conflicts! 😄 
+![](./images/rebase.gif)
+
 ---
  
 ## Finding Help
- 
-**Explanation**
 
-**Diagrams/Images**
- 
+When it comes to git, or any computer science topic for that matter, there are always multiple ways of getting help. There are screenshots, videos, podcasts, documentation, forums and dozen other forms of learning.
+Getting help for git could be done in multiple ways.
+
+### Man page
+`man` command is one of the most helpful tools on linux and MacOS. For windows, you can get same info on [Git SCM Docs](https://git-scm.com/docs/git-help/2.18.0)
+You can also use `--help` flag to get more info about each command.
+
+Examples: (!Demonstrate)
+* `man git`
+* `git --help`
+* `git add --help`
+
+---
+
+### Stack overflow
+One of the most helpful resource for any dev is no different for git specifically. Simply google or search on StackOverflow your command or question, most of these times you will find exact question being asked by someone else, and there would be a nice little (sometimes not so little) answer waiting for you.
+
+* !Demonstrate
+
+---
+### Git SCM Docs
+The official and comprehensive man pages that are included in the Git package itself.
+These are basically the web version of the help pages that are in the CLI tool as well. 
+The official and comprehensive man pages that are included in the Git package itself.
+
+https://git-scm.com/docs
+
+If you are more of a video person, you can use Youtube to your advantage and learn from some amazing videos out there.
+
 ---
  
 # Tools Demo
+There is vast support for git in most IDEs and there are dedicated desktop tools out there to decrease the amount of git commands you have to type. If using git CLI doesn't seem like your thing, most of the scenarios are covered by these clients and tools.
+Few common examples are:
  
 ## VSCode
+!Demonstrate
  
 ## Github Desktop
-
+!Demonstrate
  
 ---
  
 # Github Console Features
+Github is not just a place to store your code, it has also become a place to get help, track work, maintain documentations, encourage discussions and provide help to the users of your repository.
+Hence, github has a line of products meant to help you in all of these scenario. We can briefly go over them.
+ 
+## Issues (!Demonstrate)
 
- 
-## Issues
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+According to github.com
+> Issues let you track your work on GitHub, where development happens. When you mention an issue in another issue or pull request, the issue's timeline reflects the cross-reference so that you can keep track of related work. To indicate that work is in progress, you can link an issue to a pull request.
+---
+Few reported problems on an open source library repository.
+![](./images/issues.png)
+
+---
+You can reference these issues later in pull requests and reflect that a certain code change may fix an issue.
+![](./images/issue-ref.png)
+
 ---
  
 ## Branch Summary
- 
-**Explanation**
- 
-**Diagrams/Images**
+A summarized view of the various branches found in github that contains info about recent branches, authors and commit comparison between multiple branches.
+![](./images/branches-summary.png)
 
 ---
 
-## Versioning
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+## Versioning/Tagging/releases
+A way of marking and labelling certain points in history for milestones and a version release. Similar to how iOS, Android have versions, all softwares could be marked with versions.
+![](./images/releases.png)
+
 ---
  
 ## Discussions
- 
-**Explanation**
- 
-**Diagrams/Images**
+A way for repository authors to notify and interact with the users of the repository. It is a centralized space for discussions, announcements, Q/A, Polls etc.
+![](./images/discussions.png)
+
  
 ---
  
 ## Projects
- 
-**Explanation**
- 
-**Diagrams/Images**
- 
+Kanban-like board for tracking work and progress on a project. You can reference PRs and issues inside a project.
+![](./images/projects.png)
+
+
 ---
  
 ## Wiki
  
+A centralized place to store documentation and how-to pages. This option is used rarely in repositories since most of the authors maintain documentation under `README.md` files
 **Explanation**
  
 **Diagrams/Images**
