@@ -21,7 +21,18 @@ import slides, { notes } from '../readme.mdx';
 
 
 // SPECTACLE_CLI_THEME_START
-const theme = {};
+const theme = {
+  fontSizes: {
+    text: '15px',
+    h1: '50px',
+    h2: '36px',
+    h3: '24px',
+    h4: '18px',
+    h5: '14px',
+    h6: '12px'
+  },
+  space: [10, 14, 16]
+};
 // SPECTACLE_CLI_THEME_END
 
 // SPECTACLE_CLI_TEMPLATE_START
@@ -34,9 +45,6 @@ const template = () => (
   >
     <Box padding="0 1em">
       <FullScreen />
-    </Box>
-    <Box padding="1em">
-      <Progress />
     </Box>
   </FlexBox>
 );

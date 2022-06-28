@@ -23,6 +23,7 @@
   - [Forks](#forks)
   - [Reverts and Resets](#reverts-and-resets)
   - [Rebases](#rebases)
+  - [Blame](#blame)
   - [Merge Conflicts](#merge-conflicts)
   - [Finding Help](#finding-help)
 - [Tools Demo](#tools-demo)
@@ -60,11 +61,15 @@ Quick Terminology (will go into further depth later):
 - Commit: A summary of saved changes within the project, packaged as a single instance
 - Pull Request: An operation to submit changes from the copy back into the main
 
+---
+
 Simple Flow:
 
 <br/>
 
 ![Simple Worflow](https://i0.wp.com/build5nines.com/wp-content/uploads/2018/01/GitHub-Flow.png)
+<br/>
+
 *note: master branches are now referred to as main branches
 
 <br/>
@@ -72,9 +77,8 @@ Simple Flow:
 ---
 
 # Git vs Github
-Whereas Git is the tool which does bulk of the work, Github is the online interface that helps you
-visualize all the operations you are performing and even perform them for you in some cases. It also
-stores the repository online so your work is no longer just local to your computer hard drive
+
+### Whereas Git is the tool which does bulk of the work, Github is the online interface that helps you visualize all the operations you are performing and even perform them for you in some cases. It also stores the repository online so your work is no longer just local to your computer hard drive
  
 ---
 
@@ -103,8 +107,11 @@ In this case, `git add <file>`
 ---
  
 ## What is Github?
- 
-**Diagrams/Images**
+
+GitHub is an online software development platform used for storing, tracking, and collaborating on software projects. It enables developers to upload their own code files and to collaborate with fellow developers on open-source projects. GitHub also serves as a social networking site in which developers can openly network, collaborate, and pitch their work. 
+
+![](images/github_collaborate.jpeg)
+
  
 ---
 
@@ -236,13 +243,17 @@ Via terminal:
 - `git commit -m "<message>"`
   - This will officially "package" your added code under a summary message of all the saved changes. e.g. `git commit -m "added error handling"`
 
+---
+
 Via Github:
 
 ![](images/github_committing.png)
 
-As you can se here, I added a line via the online github text editor `Adding to read me` and GitHub below the file gives me the option to save that line as it's own commit. It also pre-populates the commit message with a generic `Update readme.mdx` and lets me branch off or submit it directly to whatever the edited branch is (in this case master)
+As you can see here, I added a line via the online github text editor `Adding to read me` and GitHub below the file gives me the option to save that line as it's own commit. It also pre-populates the commit message with a generic `Update readme.mdx` and lets me branch off or submit it directly to whatever the edited branch is (in this case master)
 
 <br/>
+
+---
 
 **Lab Objectve**
 - Create a file within the folder `lab_files` named `<username>.md`
@@ -265,11 +276,7 @@ Note:
 - Github trivializes the two above this with its interface but it's good to know
 
 ---
-**Diagrams/Images**
 
- 
----
- 
 ## Pushing up your changes
  
 When you have your commits ready on your local branch, it's time to have those very changes be reflected and updated on github via a "push".
@@ -290,6 +297,8 @@ Visual:
 Above the listed files, GitHub will show the most recent commit to that branch, the author of said commit, the commit number,
 the time committed, and the total amount of commits. Clicking on that total number will show you a history and will let you
 examine each commit and its packaged/summarized changes
+
+---
 
 ![](images/github_pushing.png)
 
@@ -337,10 +346,15 @@ A fork creates a completely independent copy of Git repository.
 Forks are a great way of creating independent copies and contributing to open-source, without necessary having access to the "main" repository.
 Forks are commonly used for open-source contribution and having safe copies for libraries. Forks by default would have two remotes setup. 
 The origin repository from which the repository is forked is saved as upstream and the forked repository is saved as origin. Both are retained so that the developers can interact with both repositories according to their scenario and choice.
+
+<br/>
+
+## [Live demo](https://github.com/facebook/react)
+
+<br/>
+
 ![](./images/fork.png)
 
----
-## [Live demo](https://github.com/facebook/react)
 ---
 ## Reverts and Resets
 Ways of undoing changes made in a commit
@@ -380,14 +394,30 @@ One way to get the changes from one branch to another is by performing a git mer
 --- 
 ![](./images/merge-conflict-setup.png)
 
-Although Git is good at deciding how to merge branches and add changes to files, it cannot always make this decision all by itself 🙂 This can happen when the two branches we're trying to merge have changes on the same line in the same file, or if one branch deleted a file that another branch modified, and so on.
 ---
+
+Although Git is good at deciding how to merge branches and add changes to files, it cannot always make this decision all by itself 🙂 This can happen when the two branches we're trying to merge have changes on the same line in the same file, or if one branch deleted a file that another branch modified, and so on.
+
+<br/>
+
 If we want to merge dev into master, this will end up in a merge conflict: would you like the title to be Hello! or Hey!?
 When trying to merge the branches, Git will show you where the conflict happens. We can manually remove the changes we don't want to keep, save the changes, add the changed file again, and commit the changes 🥳
 
 Yay! Although merge conflicts are often quite annoying, it makes total sense: Git shouldn't just assume which change we want to keep.
 
 ![](./images/merge-conflict.gif)
+
+---
+
+## Blame
+
+No need to get worried here, nobody's pointing any fingers.
+
+> git-blame - Show what revision and author last modified each line of a file
+
+It is good for tracing back which line of committed by whom and when.
+
+![](./images/blame.png)
 
 ---
 
@@ -504,6 +534,10 @@ Kanban-like board for tracking work and progress on a project. You can reference
 A centralized place to store documentation and how-to pages. This option is used rarely in repositories since most of the authors maintain documentation under `README.md` files
 ![](./images/wiki.png)
 * [Example Link](https://github.com/snowplow/snowplow/wiki)
+
+---
+
+## Questions??
 
 ---
 ### The End
